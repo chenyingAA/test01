@@ -1,0 +1,216 @@
+今天学习的内容
+1:复习昨天知识重点
+2:作业/完成综合练习
+3:今天目标 web服务器
+  3.1:web服务器与php简介   了解
+	3.2:php语法              必须掌握
+	3.3:使用php操作数据库    重点&难点
+#------------------------------------
+1:复习昨天知识重点
+  a:什么服务器
+	b:分类
+	  硬件服务器:高性计算机
+	  软件服务器:MySQL/Apache
+  c:数据库服务器
+	  解决二个问题:
+		海量存储/高速查询
+  d:SQL
+	  DDL:CREATE/DROP
+		DML:INSERT/DELETE/UPDATE
+		DQL:SELECT
+		DCL:
+  e:图:工作原理-饭店.jpg 电话订餐
+2:作业/完成综合练习
+  jd.sql
+  综合练习一.txt
+	处理中文:
+	1:将所有指令写脚本文件中
+	2:打开mysql执行指令窗口
+	3:输入二个命令
+	  SET NAMES utf8;
+		SOURCE d:/tao/ajax/day02/dangdang.sql
+  问题:看到窗口中文不正确
+	原因:库/表 正确(utf8)
+	     windows{窗口} gbk
+  解决:SET NAMES GBK;{临时将文字转换gbk显示}
+	10:38---10:42
+3:今天目标 web服务器
+   3.1:web服务器与php简介   了解
+	   a:web服务器(软件 apache)
+     b:作用:负责接收客户端请求,
+		        理解请求内容，找到请求资源并且
+						返回客户端浏览器
+      (电话餐厅：大堂经理)
+     c:web服务器种类
+		   c.1:静态web服务器(apache)
+			     提供的内容任何时间任何人访问
+					 都是完全相同.
+           属于静态web技术范畴
+					 HTML/CSS/JS/FLASH/视频/音频
+			 c.2:动态web服务器(apache)
+           提供的内容在不同的时间不同人访问
+					 可能变化属于动态范畴的技术
+           1:JSP     = HTML+JAVA
+					 2:ASP.NET = HTML+C#
+					 3:PHP     = HTML+PHP
+					 4:Node.JS = HTML+NodeJS
+
+
+  #面试题:如何自学一门新的编程语言
+   1)了解背景，历史，现状，发展，特点，应用领域
+	 2)建设环境=写出HelloWorld
+	 3)数据类型
+	 4)变量常量
+	 5)运算符
+	 6)逻辑结构
+	 7)通用小程序
+	 8)函数,对象
+	 9)常用函数库，类库，中间件，框架
+	 10)实用项目
+
+
+
+   #php 背景特点
+	 php是一种运行在服务器端(apache)的编程序言,用于
+	 生成动态网页内容.
+   
+   2000,Zend公司成立，维护php语言.发布php解释器环境
+	 php特点:开源，简单，(易上手),
+	  跨平台(windows/linux),占用资源少
+	  尤其适合中小型web应用开发
+	  (微博/微信/论坛)...
+
+   #搭建软件环境
+	  1:服务器端环境创建:下载选择web服务器
+		  apache/Microsoft IIS/Nginx
+			c:/xampp/apache/
+    2:服务器端:下载并且安装php解析软件
+		  c:/xampp/php/php.exe
+    3:服务器端:编写并保存php程序保存哪里
+		  !!!
+      c:/xampp/htdocs/1.php
+    4:服务器端:启动web服务器
+		  [start]
+    5:客户端:打开浏览器/直接输入服务器程序地址
+		  按回车
+			http://127.0.0.1/1.php
+ 
+  练习:1:创建 2.php       输出你的名字和年龄
+	     <?php
+			     echo "";
+			 ?>
+	     2:保存 c:/xampp/htdocs/
+			 3:启动 apache[start]
+			 4:访问 2.php
+			 11:47---11:50
+	3.2:php语法              必须掌握
+	  a:程序位置 c:/xampp/htdocs/??
+		b:创建程序 后缀.php  1.php 2.php
+		c:代码
+		  <?php
+			?>
+    d:声明一个变量
+		  $变量名 = 值;
+			$name = "tom";
+    e:访问程序{浏览器}
+		  http://127.0.0.1/1.php  回车
+    f:一个php程序由html/css/js/php 代码混合写
+
+    练习:14:15---14:30
+		1:创建3.php,使用php向客户端输出1个*
+		2:创建4.php,使用php向客户端输出50个*
+		3:创建5.php,使用php向客户端输出5行10列个*
+		4:创建6.php,使用php向客户端输出"九九乘法表"
+
+
+    
+  3.3:php 数据类型
+    1:值类型/标量类型
+		  string        字符串类 ""
+			boolean/bool  true/false
+			int/integer
+			float/double
+		2:复合类型
+		  object php面向对象2005年之后才出现
+			array  php索引/关联数组
+		3:特殊类型
+		  null/NULL
+			resource 资源:数据库连接，查询结果
+    4.php 练习数据类型
+		5.php 练习数组
+		6.php 综合示例
+
+	3.10:使用php操作数据库    重点&难点
+    ?数据库乱码问题处理
+		原因:脚本文件格式不正确
+		解决：保存脚本文件 utf-8
+
+		php中操作mysql数据库函数
+
+		1:php官方最初提供一套连接mysql函数:mysql_xxx(); 
+		2:php官方提供增强版mysql函数:      mysqli_xxx();
+
+    使用php操作mysql服务器步骤
+		1:创建到mysql服务器连接
+		  $conn = mysqli_connect(...);
+			1:数据库服务器地址ip 127.0.0.1
+			2:数据库用户名       root
+			3:数据库密码         
+			4:选库               dangdang
+		2:向mysql服务器发送sql指令,
+		  等待服务器执行
+			$sql = "....";//insert/delete/update
+			$result = mysqli_query($conn,$sql);
+		3:读取mysql服务器返回结果
+		  if($result===false)
+		4:断开与mysql服务器连接--可以省略
+		  mysqli_close($conn);
+
+      7.php 8.php 9.php
+
+
+    小结:
+		1:php语法
+		  $age = 10;
+		  $stop = "tom $age";
+			$run = 'tom'.$age;
+		2:php数组
+		  $arr = [1,2,3,4];
+			$arr[] = 5;
+			$arr = ["name"=>"tom","age"=>10];
+      foreach($arr as $k=>$v){
+			}
+		3:php连接mysql
+		  a:创建连接
+			$conn = mysqli_connect(数据库ip,数据库用户名,密码,库);
+			$sql = "SET NAMES UTF8";
+			mysqli_query($conn,$sql);
+			b:发送sql
+			$sql = "INSERT INTO dd_book VALUES(null,'d')";
+			$result = mysqli_query($conn,$sql);
+			c:判断结果
+			if($result === false)
+
+
+
+
+
+
+
+
+
+作业一:基础稍弱一些同学 综合练习一.txt
+       三遍
+作业二:4:输出九九乘法表
+作业三:使用php实现新闻的添加和删除功能
+1:创建news.sql脚本文件
+2:创建数据库 ifeng编码utf8
+3:创建新闻表 t_news
+  nid 新闻编号
+	title 新闻标题
+	count 浏览次数
+	content 内容
+	pubtime 发布时间
+4:创建 news_add.php 向t_news表中添加记录
+  二条
+5:创建 news_del.php 依据新闻id删除t_news表中记录
