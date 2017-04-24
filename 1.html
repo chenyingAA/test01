@@ -1,0 +1,26 @@
+<doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>first github demo</title>
+	</head>
+	<body>
+		<h3>first github demo</h3>
+		<script>
+			function getCookieVal(key){
+				var value=null;
+				var lines=document.cookie;
+				var arr=lines.split(";");
+				for(var i=0;i<arr.length;i++){
+				   var cy=arr[i];
+					 var k=cy.split("=")[0];
+					 if(k==key){
+							value=cy.split("=")[1];
+					 }
+				}
+				return value;
+			}
+			console.log(getCookieVal("uname"));
+		</script>
+	</body>
+</html>
